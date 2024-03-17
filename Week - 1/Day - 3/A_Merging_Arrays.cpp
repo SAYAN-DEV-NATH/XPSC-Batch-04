@@ -1,13 +1,11 @@
-// #include <bits/stdc++.h>
-// #define endl '\n'
-// #define ll long long int
-#include <iostream>
-#include <vector>
+#include <bits/stdc++.h>
+#define endl '\n'
+#define ll long long int
 using namespace std;
 
 int main() {
-    // ios::sync_with_stdio(0);
-    // cin.tie(0);
+    ios::sync_with_stdio(0);
+    cin.tie(0);
     
     int n, m; cin >> n >> m;
     vector<int> a(n), b(m);
