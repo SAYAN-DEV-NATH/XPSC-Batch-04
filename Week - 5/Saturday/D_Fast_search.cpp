@@ -21,7 +21,7 @@ int main()
         cin >> l >> r;
         auto x = lower_bound(a.begin(), a.end(), l);
         auto y = upper_bound(a.begin(), a.end(), r);
-        cout << abs((x - a.begin()) - (y - a.begin())) << " ";
+        cout << (y - a.begin()) - (x - a.begin()) << " ";
     }
     return 0;
 }
