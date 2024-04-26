@@ -9,8 +9,10 @@ int main()
 
     ll k = 1;
     ll n, q;
-    while (cin >> n >> q && (n != 0 || q != 0))
+    while (cin >> n >> q)
     {
+        if (n == 0 && q == 0)
+            break;
         vector<ll> a(n);
         for (int i = 0; i < n; i++)
         {
@@ -22,7 +24,7 @@ int main()
         {
             ll x;
             cin >> x;
-            ll l = 0, r = n - 1, index = 0;
+            ll l = 0, r = n - 1, index = -1;
             bool flag = false;
             while (l <= r)
             {
@@ -31,7 +33,7 @@ int main()
                 {
                     flag = true;
                     index = m;
-                    break;
+                    r = m - 1;
                 }
                 else if (x > a[m])
                     l = m + 1;
