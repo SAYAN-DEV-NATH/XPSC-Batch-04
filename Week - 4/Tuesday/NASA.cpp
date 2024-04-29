@@ -6,37 +6,28 @@ typedef long long ll;
 
 void solve()
 {
-    ll n;
-    cin >> n;
+    ll n; cin >> n;
     vector<ll> a(n), tmp;
-    for (ll i = 0; i < n; ++i)
-        cin >> a[i];
+    for (ll i = 0; i < n; ++i) cin >> a[i];
 
     ll cnt = 0, ans;
-    for (ll i = 0; i < n; ++i)
-    {
-        for (ll j = 0; j < n; ++j)
-        {
+    for (ll i = 0; i < n; ++i){
+        for (ll j = 0; j < n; ++j){
             ans = a[i] ^ a[j];
             tmp.push_back(ans);
 
             string s;
-            while (ans != 0)
-            {
+            while (ans != 0){
                 ll r = ans % 10;
                 s.push_back(r);
                 ans /= 10;
             }
-            if (s.length() == 0)
-                cnt++;
-            else
-            {
+            if (s.length() == 0) cnt++;
+            else{
                 ll l = 0, r = s.length() - 1;
                 bool flag = true;
-                while (l < r)
-                {
-                    if (s[l] != s[r])
-                    {
+                while (l < r){
+                    if (s[l] != s[r]){
                         flag = false;
                         break;
                     }
