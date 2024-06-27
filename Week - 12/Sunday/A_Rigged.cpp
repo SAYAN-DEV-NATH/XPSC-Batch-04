@@ -1,38 +1,39 @@
-#include <bits/stdc++.h>
-using namespace std;
+/*-----------------(ও নমঃ শিবায়)-----------------*/
+#include <bits/stdc++.h> // Creator: SAYAN-DEV-NATH
+using namespace std;     // Created: 2024-06-11 22:58:20
 typedef long long ll;
-const int N = 109;
 
-int t;
-int n;
-int s[N], e[N];
 int main()
 {
     ios::sync_with_stdio(false), cin.tie(nullptr), cout.tie(nullptr);
-    int testcase;
-    cin >> testcase;
-    while (testcase--)
+    ll t;
+    cin >> t;
+    while (t--)
     {
         int n;
         cin >> n;
-        cin >> n;
+        vector<int> str, end;
         for (int i = 0; i < n; ++i)
         {
-            cin >> s[i] >> e[i];
+            int x, y;
+            cin >> x >> y;
+            str.push_back(x);
+            end.push_back(y);
         }
-
-        bool ok = true;
+        bool found = false;
         for (int i = 1; i < n; ++i)
-            if (s[i] >= s[0] && e[i] >= e[0])
-                ok = false;
-
-        if (!ok)
         {
-            puts("-1");
-            continue;
+            if (str[i] >= str[0] && end[i] >= end[0])
+            {
+                cout << -1 << endl;
+                found = true;
+                break;
+            }
         }
-
-        cout << s[0] << endl;
+        if (!found)
+        {
+            cout << str[0] << endl;
+        }
     }
     return 0;
 }
